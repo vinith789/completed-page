@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department Layout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.dpt-container {
+  max-width: 1200px;
+  width: 100%;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Desktop Layout */
+.dpt-layout {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.dpt-text-section {
+  flex: 1;
+}
+
+.dpt-text-section h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.dpt-text-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.dpt-image-section {
+  max-width: 400px;
+}
+
+.dpt-image-section img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* Cards Section */
+.dpt-cards-section {
+  display: flex;
+  gap: 20px;
+}
+
+.info-card {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+  font-size: 18px;
+  color: #0056b3;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.info-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  text-align: center;
+}
+
+
+
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .dpt-layout {
+    flex-direction: column;
+  }
+
+  .dpt-image-section,
+  .dpt-text-section {
+    width: 100%;
+  }
+
+  .dpt-image-section {
+    order: -1; /* Bring the image first in mobile view */
+    margin-bottom: 20px;
+  }
+
+  .dpt-cards-section {
+    flex-direction: column;
+  }
+
+  .info-card {
+    margin-bottom: 20px;
+  }
+}
+
+</style>
+<body>
+  <div class="dpt-container">
+    <!-- Desktop View Layout -->
+    <div class="dpt-layout">
+      <!-- Image Section -->
+      <div class="dpt-image-section">
+        <img src="https://via.placeholder.com/300" alt="Mechanical Engineering Image" />
+      </div>
+
+      <!-- Text Content Section -->
+      <div class="dpt-text-section">
+        <h1>Mechanical Engineering</h1>
+        <p>
+          The department was established in the year 2011. The department offers
+          a 4-year B.E. program (8 semesters) in Mechanical Engineering which is
+          affiliated to Anna University, Chennai, and approved by the All India Council
+          for Technical Education (AICTE). The department currently has an intake of
+          120 students. The department has qualified competent and motivated faculty
+          members with minimum experience of 10 years.
+        </p>
+      </div>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="dpt-cards-section">
+      <div class="info-card">
+        <h3>VISION</h3>
+        <p>
+          To impart futuristic technical education through dedicated staff and set a
+          global standard by making students technologically superior, disciplined, and
+          ethically strong who will improve the life of human beings.
+        </p>
+      </div>
+      <div class="info-card">
+        <h3>MISSION</h3>
+        <p>
+          To create an environment that shall foster the growth of intellectually capable
+          and innovative professionals who can contribute to the growth of technology in
+          partnership with industry and harness it for the welfare of the nation and mankind.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

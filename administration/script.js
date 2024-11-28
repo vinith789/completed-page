@@ -29,12 +29,17 @@ tabs.forEach((tab, index) => {
   });
 });
 
-// Adjust line position on window resize
-window.addEventListener('resize', () => {
-  const activeTab = document.querySelector('.tab_btn.active');
-  setLinePosition(activeTab);
-});
+// Adjust line position dynamically
+function setLinePosition(activeTab) {
+  line.style.width = `${activeTab.offsetWidth}px`; // Dynamically set width
+  line.style.left = `${activeTab.offsetLeft}px`;  // Position it accurately
+}
 
+// Add window resize listener to ensure proper adjustments
+window.addEventListener("resize", () => {
+  const activeTab = document.querySelector(".tab_btn.active");
+  setLinePosition(activeTab); // Recalculate position on resize
+});
 
 // Array to store the content data
 const contentArray = [
@@ -118,7 +123,7 @@ function initializeContent() {
 
 // Function to display content based on index with animation
 function showContent(index) {
-  const displayCard = document.getElementById("management-display-card"); // Corrected ID
+  const displayCard = document.getElementById("management-display-card");
 
   // Add fade-out effect
   displayCard.classList.remove("show");
